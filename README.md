@@ -6,7 +6,7 @@ Dynamic http service with two callback optionals.
 
 var response = await DHttpService.get(tag: 'GET', url: 'http://www.nph.guru/api/uers', headers: null, body: null,);
 
-## OR
+OR
 
 DHttpService.get(
   tag: 'GET',
