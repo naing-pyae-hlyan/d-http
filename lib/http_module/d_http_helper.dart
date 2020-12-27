@@ -33,9 +33,9 @@ class DHttpServices {
     final VoidCallback onConnectionError,
     @required String tag,
     @required String url,
-    final Map<String, String> headers,
+    final Map<String, String> headers = defaultJsonHeaders,
     final dynamic body,
-    final Duration timeoutDuration,
+    final Duration timeoutDuration = defaultTimeoutDuration,
   }) async {
     try {
       final response = await http
@@ -96,11 +96,11 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers,
+    final Map<String, String> headers = defaultJsonHeaders,
     final Map<String, String> params,
     final String key,
     final List<String> filePaths,
-    final Duration timeoutDuration,
+    final Duration timeoutDuration = defaultTimeoutDuration,
   }) async {
     var request = http.MultipartRequest(
       DHttpMethod.POST.toString(),
@@ -195,9 +195,9 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers,
+    final Map<String, String> headers = defaultJsonHeaders,
     final dynamic body,
-    final Duration timeoutDuration,
+    final Duration timeoutDuration =  defaultTimeoutDuration,
   }) async {
     try {
       final response =
@@ -263,9 +263,9 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers,
+    final Map<String, String> headers = defaultJsonHeaders,
     final Map<String, String> params,
-    final Duration timeoutDuration,
+    final Duration timeoutDuration = defaultTimeoutDuration,
   }) async {
     String fullUrl = url;
 
@@ -342,9 +342,9 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers,
+    final Map<String, String> headers = defaultJsonHeaders,
     final dynamic body,
-    final Duration timeoutDuration,
+    final Duration timeoutDuration = defaultTimeoutDuration,
   }) async {
     try {
       final response = await http
@@ -402,7 +402,7 @@ class DHttpServices {
     }
   }
 
-  void printDebugLog(String tag, String msg) {
+  static void printDebugLog(String tag, String msg) {
     if (kReleaseMode) {
       return;
     }
