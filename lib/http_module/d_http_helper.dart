@@ -33,7 +33,7 @@ class DHttpServices {
     final VoidCallback onConnectionError,
     @required String tag,
     @required String url,
-    final Map<String, String> headers = defaultJsonHeaders,
+    final Map<String, String> headers,
     final dynamic body,
     final Duration timeoutDuration = defaultTimeoutDuration,
   }) async {
@@ -96,7 +96,7 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers = defaultJsonHeaders,
+    final Map<String, String> headers,
     final Map<String, String> params,
     final String key,
     final List<String> filePaths,
@@ -195,7 +195,7 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers = defaultJsonHeaders,
+    final Map<String, String> headers,
     final dynamic body,
     final Duration timeoutDuration =  defaultTimeoutDuration,
   }) async {
@@ -263,7 +263,7 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers = defaultJsonHeaders,
+    final Map<String, String> headers,
     final Map<String, String> params,
     final Duration timeoutDuration = defaultTimeoutDuration,
   }) async {
@@ -342,7 +342,7 @@ class DHttpServices {
     final VoidCallback onNoInternet,
     @required final String tag,
     @required final String url,
-    final Map<String, String> headers = defaultJsonHeaders,
+    final Map<String, String> headers,
     final dynamic body,
     final Duration timeoutDuration = defaultTimeoutDuration,
   }) async {
