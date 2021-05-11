@@ -39,7 +39,7 @@ class DHttpServices {
   }) async {
     try {
       final response = await http
-          .post(url, headers: headers, body: body)
+          .post(Uri.parse(url), headers: headers, body: body)
           .timeout(timeoutDuration, onTimeout: () {
         printDebugLog(
           tag,
@@ -201,7 +201,7 @@ class DHttpServices {
   }) async {
     try {
       final response =
-          await http.put(url, headers: headers, body: body).timeout(
+          await http.put(Uri.parse(url), headers: headers, body: body).timeout(
         timeoutDuration,
         onTimeout: () {
           printDebugLog(
@@ -280,7 +280,7 @@ class DHttpServices {
     }
 
     try {
-      final response = await http.get(fullUrl, headers: headers).timeout(
+      final response = await http.get(Uri.parse(fullUrl), headers: headers).timeout(
         timeoutDuration,
         onTimeout: () {
           printDebugLog(
@@ -348,7 +348,7 @@ class DHttpServices {
   }) async {
     try {
       final response = await http
-          .delete(url, headers: headers)
+          .delete(Uri.parse(url), headers: headers)
           .timeout(timeoutDuration, onTimeout: () {
         printDebugLog(
           tag,
